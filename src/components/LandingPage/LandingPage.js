@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchArtists } from '../../state/actions';
 import { sliderArr } from "../../Data/sliderArray";
 
 // Artist Photos:
@@ -17,30 +18,12 @@ import {
 } from "./LandingPageStyles";
 
 const LandingPage = () => {
-  const [artistData, setArtistData] = useState([]);
+  const artistData = useSelector(state => state.artistData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/artists/")
-      .then((res) => {
-        let artists = [];
-        let index = 0;
-
-        res.data.artists.forEach((artist) => {
-          const newData = {
-            ...artist,
-            artist_photo: data.artists[index].artist_photo,
-          };
-          index++;
-          artists.push(newData);
-        });
-
-        setArtistData(artists);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    fetchArtists(dispatch)
+  }, [dispatch]);
 
   return (
     <LandingPageContainer>
