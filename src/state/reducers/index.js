@@ -3,10 +3,12 @@ import { actionTypes } from '../actions';
 export const initialState = {
     isFetching: false,
     errorMessage: '',
-    artistData: []
+    artistData: [],
+    artist: [],
+    releases: []
 }
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state=initialState, action) => {
     switch (action.type){
         case actionTypes.FETCH_START:
             return {
@@ -27,6 +29,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state, 
                 artistData: action.payload
+            }
+        case actionTypes.SET_BIO_DATA:
+            return {
+                ...state, 
+                releases: action.payload[0],
+                artist: action.payload[1]
             }
         default:
             return state;

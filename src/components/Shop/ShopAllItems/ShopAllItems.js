@@ -32,7 +32,9 @@ export const ShopAllItems = () => {
       console.log(err)
     })
   }, [])
+  
   console.log(products)
+
   return (
   <Container>
     <Carousel sliderArr={sliderArr} />

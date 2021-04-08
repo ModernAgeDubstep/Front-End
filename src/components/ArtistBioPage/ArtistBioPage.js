@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-// Artist Photos:
-import { data } from "../../Data/Data";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchArtistBioData } from '../../state/actions';
+import { data } from '../../Data/Data';
 
 // Sub Components:
 import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
@@ -23,45 +22,17 @@ import {
 } from "./ArtistBioPageStyles";
 
 const ArtistBioPage = (props) => {
+  const dispatch = useDispatch();
   // Params needed for axios call:
   const artistName = props.match.params.artistName;
   const id = props.match.params.id;
   // State:
-  const [artist, setArtist] = useState();
-  const [releases, setReleases] = useState();
+  const artist = useSelector(state => state.artist);
+  const releases = useSelector(state => state.releases);
 
   useEffect(() => {
-    axios
-      .all([
-        axios.get(`http://localhost:5000/api/artists/${artistName}`),
-        axios.get(`http://localhost:5000/api/releases/${id}`),
-      ])
-      .then(
-        axios.spread((artistData, releaseData) => {
-          setArtist(artistData.data.artistData[0]);
-          // This code block adds a photo to each index for the album release.
-          // Will refactor once I know how to use photo bucket tech
-          let releasesArray = [];
-          let index = 0;
-          releaseData.data.releases.forEach(release => {
-            const newRelease = {
-              ...release,
-              release_photo: data.releasePhotos[index]
-            }
-            if(index < 2){
-              index++
-            } else {
-              index = 0
-            }
-            releasesArray.push(newRelease);
-          })
-          setReleases(releasesArray);
-        })
-      )
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [artistName, id]);
+    fetchArtistBioData(dispatch, artistName, id);
+  }, [dispatch, artistName, id]);
 
   return (
     <Container>

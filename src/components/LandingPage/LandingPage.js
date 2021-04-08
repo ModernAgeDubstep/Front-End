@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchArtists } from '../../state/actions';
 import { sliderArr } from "../../Data/sliderArray";
@@ -23,7 +23,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     fetchArtists(dispatch)
-  }, []);
+  }, [dispatch]);
 
   return (
     <LandingPageContainer>
