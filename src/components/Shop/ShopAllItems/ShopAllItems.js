@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchAllProducts } from '../../../state/actions';
 
 // Data:
 import { data } from '../../../Data/Data';
@@ -20,19 +21,13 @@ import {
 } from './AllItemsStyles';
 
 export const ShopAllItems = () => {
-  const [products, setProducts] = useState();
+  const products = useSelector(state => state.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-    .get('http://localhost:5000/api/stripe/products')
-    .then(res => {
-      setProducts(res.data.product.data);
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }, [])
-  
+    fetchAllProducts(dispatch);
+  }, [dispatch])
+
   console.log(products)
 
   return (

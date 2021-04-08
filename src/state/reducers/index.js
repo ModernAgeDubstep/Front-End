@@ -5,7 +5,8 @@ export const initialState = {
     errorMessage: '',
     artistData: [],
     artist: [],
-    releases: []
+    releases: [],
+    products: []
 }
 
 export const reducer = (state=initialState, action) => {
@@ -35,6 +36,11 @@ export const reducer = (state=initialState, action) => {
                 ...state, 
                 releases: action.payload[0],
                 artist: action.payload[1]
+            }
+        case actionTypes.FETCH_PRODUCTS:
+            return {
+                ...state,
+                products: action.payload
             }
         default:
             return state;

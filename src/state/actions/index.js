@@ -6,7 +6,8 @@ export const actionTypes = {
   FETCH_END: 'FETCH_END',
   FETCH_ERROR: 'FETCH_ERROR',
   GET_ALL_ARTISTS: 'GET_ALL_ARTISTS',
-  SET_BIO_DATA: 'SET_BIO_DATA'
+  SET_BIO_DATA: 'SET_BIO_DATA',
+  FETCH_PRODUCTS: 'FETCH_PRODUCTS'
 }
 
 export const fetchArtists = (dispatch) => {
@@ -65,5 +66,18 @@ export const fetchArtistBioData = (dispatch, artistName, artistId) => {
         dispatch({ type: actionTypes.FETCH_ERROR, payload: err })
       });
       dispatch({ type: actionTypes.FETCH_END })
+}
+
+export const fetchAllProducts = (dispatch) => {
+  dispatch({ type: actionTypes.FETCH_START });
+  axios
+    .get('http://localhost:5000/api/stripe/products')
+    .then(res => {
+      dispatch({ type: actionTypes.FETCH_PRODUCTS, payload: res.data.product.data });
+    })
+    .catch(err => {
+      dispatch({ type: actionTypes.FETCH_ERROR });
+    })
+    dispatch({ type: actionTypes.FETCH_END });
 }
 
