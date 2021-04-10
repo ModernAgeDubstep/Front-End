@@ -37,4 +37,4 @@ export const siteTabNames = ["Roster", "Shop", "Videos", "Contact"];
 
 // Array of tab names needed for the ShopNavBar tab elements.
 // removing this array will cause SiteNavBar Tests to fail.
-export const shopTabNames = ["All Items", "Hat", "Shirts", "Accessories"];
+export const shopTabNames = ["All Items", "Hats", "Shirts", "Accessories"];

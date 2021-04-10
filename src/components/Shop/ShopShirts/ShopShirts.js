@@ -7,7 +7,7 @@ import {
 const ShopShirts = () => {
     return(
         <StyledContainer>
-
+            <h1>Shirts</h1>
         </StyledContainer>
     )
 }
