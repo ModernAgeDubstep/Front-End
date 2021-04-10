@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchArtists } from '../../state/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { fetchArtists } from "../../state/actions";
 import { sliderArr } from "../../Data/sliderArray";
 
 // Artist Photos:
@@ -18,11 +18,11 @@ import {
 } from "./LandingPageStyles";
 
 const LandingPage = () => {
-  const artistData = useSelector(state => state.artistData);
+  const artistData = useSelector((state) => state.artistData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchArtists(dispatch)
+    fetchArtists(dispatch);
   }, [dispatch]);
 
   return (

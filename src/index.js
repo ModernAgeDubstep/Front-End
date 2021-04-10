@@ -5,11 +5,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 // Redux:
-import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import { reducer } from './state/reducers';
-import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from "redux";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import { reducer } from "./state/reducers";
+import { Provider } from "react-redux";
 
 // Redux Store:
 const store = createStore(reducer, applyMiddleware(logger, thunk));
@@ -20,7 +20,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </Provider>,
-    document.getElementById("root")
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

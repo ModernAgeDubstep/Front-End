@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllProducts } from '../../../state/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllProducts } from "../../../state/actions";
 
 // Data:
-import { data } from '../../../Data/Data';
-import { sliderArr } from '../../../Data/sliderArray';
+import { data } from "../../../Data/Data";
+import { sliderArr } from "../../../Data/sliderArray";
 
 // sub components:
-import Carousel from '../../reuseable/carousel/Carousel';
-import SocialMediaIcons from '../../SocialMediaIcons/SocialMediaIcons';
-import ShopCard from '../../reuseable/ShopCards/ShopCard';
+import Carousel from "../../reuseable/carousel/Carousel";
+import SocialMediaIcons from "../../SocialMediaIcons/SocialMediaIcons";
+import ShopCard from "../../reuseable/ShopCards/ShopCard";
 
 // styled components:
 import {
@@ -17,35 +17,40 @@ import {
   HeaderDiv,
   Header,
   ItemSection,
-  LoadingHeader
-} from './AllItemsStyles';
+  LoadingHeader,
+} from "./AllItemsStyles";
 
 export const ShopAllItems = () => {
-  const products = useSelector(state => state.products);
+  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
     fetchAllProducts(dispatch);
-  }, [dispatch])
+  }, [dispatch]);
 
-  console.log(products)
+  console.log(products);
 
   return (
-  <Container>
-    <Carousel sliderArr={sliderArr} />
-    {data.madSocials !== undefined ? (
+    <Container>
+      <Carousel sliderArr={sliderArr} />
+
+      {data.madSocials !== undefined ? (
         <SocialMediaIcons socials={data.madSocials} />
       ) : null}
-    <HeaderDiv>
-      <Header>All Items</Header>
-    </HeaderDiv>
-    <ItemSection>
-      {products !== undefined ? 
-        products.map((item) => {
-          return <ShopCard key={item.id} item={item} />;
-        }):
-        <LoadingHeader>Loading...</LoadingHeader>
-      }
-    </ItemSection>
-  </Container>
-)};
+
+      <HeaderDiv>
+        <Header>All Items</Header>
+      </HeaderDiv>
+
+      <ItemSection>
+        {products !== undefined ? (
+          products.map((item) => {
+            return <ShopCard key={item.id} item={item} />;
+          })
+        ) : (
+          <LoadingHeader>Loading...</LoadingHeader>
+        )}
+      </ItemSection>
+    </Container>
+  );
+};

@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 
@@ -9,7 +14,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import ArtistBioPage from "./components/ArtistBioPage/ArtistBioPage";
 // Shop Pages:
 import ShopWrapper from "./components/ShopWrapper/ShopWrapper";
-import { ShopAllItems } from './components/Shop/ShopAllItems/ShopAllItems';
+import { ShopAllItems } from "./components/Shop/ShopAllItems/ShopAllItems";
 
 // colors:
 import colors from "./helpers/colors";
@@ -23,13 +28,13 @@ function App() {
     <AppContainer data-test="App-Component" className="App">
       <Router>
         <Switch>
-          <Route exact path="/" render={() => <Redirect to='/site/roster' /> } />
+          <Route exact path="/" render={() => <Redirect to="/site/roster" />} />
         </Switch>
         <Route path="/site" component={SiteWrapper} />
         <Route path="/site/roster" component={LandingPage} />
         <Route path="/site/artist/:artistName/:id" component={ArtistBioPage} />
         <Route path="/shop" component={ShopWrapper} />
-        <Route path='/shop/allitems' component={ShopAllItems} />
+        <Route path="/shop/allitems" component={ShopAllItems} />
       </Router>
     </AppContainer>
   );
