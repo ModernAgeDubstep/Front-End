@@ -15,6 +15,7 @@ import ArtistBioPage from "./components/ArtistBioPage/ArtistBioPage";
 // Shop Pages:
 import ShopWrapper from "./components/ShopWrapper/ShopWrapper";
 import { ShopAllItems } from "./components/Shop/ShopAllItems/ShopAllItems";
+import ShopHats from './components/Shop/ShopHats/ShopHats';
 
 // colors:
 import colors from "./helpers/colors";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/site/artist/:artistName/:id" component={ArtistBioPage} />
         <Route path="/shop" component={ShopWrapper} />
         <Route path="/shop/allitems" component={ShopAllItems} />
+        <Route path="/shop/hats" component={ShopAllItems} />
       </Router>
     </AppContainer>
   );
