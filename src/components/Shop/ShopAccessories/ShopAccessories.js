@@ -2,9 +2,9 @@ import React from 'react';
 
 import {
     StyledContainer
-} from './ShopShirtsStyles';
+} from './ShopAccessoriesStyles';
 
-const ShopShirts = () => {
+const ShopAccessories = () => {
     return(
         <StyledContainer>
 
@@ -12,4 +12,4 @@ const ShopShirts = () => {
     )
 }
 
-export default ShopShirts;
+export default ShopAccessories;
