@@ -76,19 +76,19 @@ export const ReleaseSection = styled.section`
   display: flex;
   align-self: center;
   flex-direction: column;
-  padding: .5rem;
+  padding: 0.5rem;
 `;
 
 export const ReleaseContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1rem
+  margin-top: 1rem;
 `;
 
 export const ReleaseHeader = styled.h2`
-    display: flex;
-    align-self: center;
-    color: white;
-    margin: 0px;
+  display: flex;
+  align-self: center;
+  color: white;
+  margin: 0px;
 `;

@@ -7,9 +7,9 @@ import tPlanet from "../assets/ArtistPhotos/12planet.jpg";
 import fCarrot from "../assets/ArtistPhotos/50carrot.jpg";
 
 // Release Photos:
-import release1 from '../assets/ReleasePhotos/release1.jpeg';
-import release2 from '../assets/ReleasePhotos/release2.png';
-import release3 from '../assets/ReleasePhotos/release3.jpeg';
+import release1 from "../assets/ReleasePhotos/release1.jpeg";
+import release2 from "../assets/ReleasePhotos/release2.png";
+import release3 from "../assets/ReleasePhotos/release3.jpeg";
 
 export const data = {
   madSocials: {
@@ -37,4 +37,4 @@ export const siteTabNames = ["Roster", "Shop", "Videos", "Contact"];
 
 // Array of tab names needed for the ShopNavBar tab elements.
 // removing this array will cause SiteNavBar Tests to fail.
-export const shopTabNames = ["All Items", "Hat", "Shirts", "Accessories"];
+export const shopTabNames = ["All Items", "Hats", "Shirts", "Accessories"];

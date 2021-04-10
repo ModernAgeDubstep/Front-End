@@ -38,13 +38,13 @@ export const CardContainer = styled.div`
   border-radius: 5px;
   transform-style: preserve-3d;
   transition: all 0.8s ease;
-  
+
   &:hover {
     transform: rotateY(180deg);
   }
 `;
 
-export const FrontOfCard = styled.div` 
+export const FrontOfCard = styled.div`
   position: absolute;
   height: 100%;
   width: auto;

@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { stripeAuth } from '../../../api/withAuth';
+import React from "react";
 
 // Styled Components:
 import {
@@ -13,19 +12,6 @@ import {
 } from "./ShopCardStyles";
 
 const ShopCard = ({ item }) => {
-
-    useEffect(() => {
-        // switch to axios.
-        stripeAuth()
-        .get(`http://localhost:5000/api/stripe/price/${item.id}`)
-        .then(res => {
-            console.log(res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }, [item.id])
-    
   return (
     <Container data-test="card-container">
       <CardContainer data-test="the-card">

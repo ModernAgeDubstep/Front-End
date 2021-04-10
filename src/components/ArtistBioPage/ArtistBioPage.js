@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchArtistBioData } from '../../state/actions';
-import { data } from '../../Data/Data';
+import { useSelector, useDispatch } from "react-redux";
+import { fetchArtistBioData } from "../../state/actions";
+import { data } from "../../Data/Data";
 
 // Sub Components:
 import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
@@ -18,7 +18,7 @@ import {
   ArtistBio,
   ReleaseSection,
   ReleaseHeader,
-  ReleaseContainer
+  ReleaseContainer,
 } from "./ArtistBioPageStyles";
 
 const ArtistBioPage = (props) => {
@@ -27,8 +27,8 @@ const ArtistBioPage = (props) => {
   const artistName = props.match.params.artistName;
   const id = props.match.params.id;
   // State:
-  const artist = useSelector(state => state.artist);
-  const releases = useSelector(state => state.releases);
+  const artist = useSelector((state) => state.artist);
+  const releases = useSelector((state) => state.releases);
 
   useEffect(() => {
     fetchArtistBioData(dispatch, artistName, id);
@@ -46,9 +46,9 @@ const ArtistBioPage = (props) => {
                   src={artist.artist_photo}
                   alt={artistName}
                 />
-              )
+              );
             }
-            return null
+            return null;
           })}
           {artist !== undefined ? <SocialMediaIcons socials={artist} /> : null}
         </ImgWrapper>
@@ -69,13 +69,14 @@ const ArtistBioPage = (props) => {
       </ArtistBioSection>
       <ReleaseSection>
         <ReleaseHeader>Releases</ReleaseHeader>
-        <ReleaseContainer>  
-          {releases !== undefined ? 
-          releases.map((release) => {
-            return <ReleaseCard key={release.id} releaseData={release} />;
-          })
-          : <h4>Loading...</h4>
-          }
+        <ReleaseContainer>
+          {releases !== undefined ? (
+            releases.map((release) => {
+              return <ReleaseCard key={release.id} releaseData={release} />;
+            })
+          ) : (
+            <h4>Loading...</h4>
+          )}
         </ReleaseContainer>
       </ReleaseSection>
     </Container>

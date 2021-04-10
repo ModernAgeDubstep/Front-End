@@ -42,7 +42,12 @@ const SiteNavBar = (props) => {
               onClick={() => props.siteHandleClick(tabName)}
             />
           ) : (
-            <Tab key={tabName} data-test="nav-tab" label={tabName} />
+            <Tab 
+              key={tabName} 
+              data-test="nav-tab" 
+              label={tabName} 
+              onClick={() => props.shopHandleClick(tabName)}
+            />
           );
         })}
       </Tabs>

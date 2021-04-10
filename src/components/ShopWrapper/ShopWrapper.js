@@ -11,10 +11,10 @@ import { shopTabNames } from "../../Data/Data";
 const ShopWrapper = () => {
   let history = useHistory();
 
-  const handleClick = (location, cb) => {
+  const handleClick = (location) => {
     const newLocation = location.toLowerCase();
     newLocation === "all items"
-      ? history.push("shop/allitems")
+      ? history.push("/shop/allitems")
       : history.push(`/shop/${newLocation}`);
   };
 
