@@ -33,15 +33,12 @@ export const ShopAllItems = () => {
   return (
     <Container>
       <Carousel sliderArr={sliderArr} />
-
       {data.madSocials !== undefined ? (
         <SocialMediaIcons socials={data.madSocials} />
       ) : null}
-
       <HeaderDiv>
         <Header>All Items</Header>
       </HeaderDiv>
-
       <ItemSection>
         {products !== undefined ? (
           products.map((item) => {
