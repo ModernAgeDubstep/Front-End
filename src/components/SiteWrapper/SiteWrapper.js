@@ -18,6 +18,7 @@ const SiteWrapper = (props) => {
       : history.push(`/site/${newLocation}`);
   };
 
+  
   return (
     <div>
       {props.location.pathname === "/site/roster" ? (
