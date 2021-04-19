@@ -20,7 +20,7 @@ import {
 const LandingPage = () => {
   const artistData = useSelector((state) => state.artistData);
   const dispatch = useDispatch();
-
+  // console.log(artistData)
   useEffect(() => {
     fetchArtists(dispatch);
   }, [dispatch]);
@@ -31,7 +31,7 @@ const LandingPage = () => {
       {data.madSocials !== undefined ? (
         <SocialMediaIcons socials={data.madSocials} />
       ) : null}
-      <Header data-test="landing-header">Artists</Header>
+      <Header data-test="landing-page-header">Artists</Header>
       <CardContainer>
         {artistData.map((artist) => {
           return <FlipCard key={artist.id} artist={artist} />;
