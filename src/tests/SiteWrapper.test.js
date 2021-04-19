@@ -3,11 +3,29 @@ import SiteWrapper from "../components/SiteWrapper/SiteWrapper";
 import { findByTestAttr } from "./testUtils";
 import { shallow } from "enzyme";
 
+const defaultProps = {
+  location: {
+    pathname: '/site/roster'
+  }
+};
+
+/**
+ * @function setup
+ * @param {object} props - Component props specific to this setup
+ * @returns {ShallowWrapper}
+ */
+
+ const setup = (props = {}) => {
+  const setupProps = { ...defaultProps, ...props };
+  return shallow(<SiteWrapper {...setupProps} />);
+};
+
+
 describe("expect Landing Page to render its self and its Sub Components without error", () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<SiteWrapper />);
+    component = setup();
   });
 
   test("Sub Component SiteLogo renders without errors", () => {
