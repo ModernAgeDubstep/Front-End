@@ -28,7 +28,7 @@ export const ShopAllItems = () => {
     fetchAllProducts(dispatch);
   }, [dispatch]);
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <Container>

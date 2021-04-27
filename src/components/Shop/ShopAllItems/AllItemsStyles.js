@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+
+`;
 
 export const HeaderDiv = styled.div`
   display: flex;
@@ -14,6 +16,7 @@ export const Header = styled.h1`
 export const ItemSection = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const LoadingHeader = styled.h3`
