@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-// color pallete:
-import colors from "../../../helpers/colors";
-
 export const Container = styled.div`
   width: 20rem;
   height: 20rem;
