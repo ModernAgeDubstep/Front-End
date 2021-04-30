@@ -7,9 +7,9 @@ import { sliderArr } from "../../Data/sliderArray";
 import { data } from "../../Data/Data.js";
 
 // Sub Components:
-import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
-import Carousel from "../reuseable/carousel/Carousel";
-import FlipCard from "./FlipCard";
+import SocialMediaIcons from "../../components/SocialMediaIcons/SocialMediaIcons";
+import Carousel from "../../components/reuseable/carousel/Carousel";
+import FlipCard from "../../components/FlipCard/FlipCard";
 
 import {
   LandingPageContainer,

@@ -8,16 +8,20 @@ import {
 import styled from "styled-components";
 import "./App.css";
 
-// Site Pages:
+// Page Wrappers:
 import SiteWrapper from "./components/SiteWrapper/SiteWrapper";
-import LandingPage from "./components/LandingPage/LandingPage";
-import ArtistBioPage from "./components/ArtistBioPage/ArtistBioPage";
-// Shop Pages:
 import ShopWrapper from "./components/ShopWrapper/ShopWrapper";
-import { ShopAllItems } from "./components/Shop/ShopAllItems/ShopAllItems";
-import ShopHats from './components/Shop/ShopHats/ShopHats';
-import ShopShirts from './components/Shop/ShopShirts/ShopShirts';
-import ShopAccessories from "./components/Shop/ShopAccessories/ShopAccessories";
+
+// Site Pages:
+import LandingPage from "./pages/LandingPage/LandingPage";
+import ArtistBioPage from "./pages/ArtistBioPage/ArtistBioPage";
+
+// Shop Pages:
+import { ShopAllItems } from "./pages/Shop/ShopAllItems/ShopAllItems";
+import ShopHats from './pages/Shop/ShopHats/ShopHats';
+import ShopShirts from './pages/Shop/ShopShirts/ShopShirts';
+import ShopAccessories from "./pages/Shop/ShopAccessories/ShopAccessories";
+import ItemInfoPage from "./pages/Shop/ItemInfoPage/ItemInfoPage";
 
 // colors:
 import colors from "./helpers/colors";
@@ -41,6 +45,7 @@ function App() {
         <Route path="/shop/hats" component={ShopHats} />
         <Route path="/shop/shirts" component={ShopShirts} />
         <Route path="/shop/accessories" component={ShopAccessories} />
+        <Route path="/shop/item/:productId" component={ItemInfoPage} />
       </Router>
     </AppContainer>
   );

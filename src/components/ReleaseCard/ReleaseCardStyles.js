@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // color pallete:
-import colors from "../../../helpers/colors";
+import colors from "../../helpers/colors";
 
 export const Container = styled.div`
   display: flex;
