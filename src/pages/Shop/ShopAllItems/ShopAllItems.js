@@ -7,9 +7,9 @@ import { data } from "../../../Data/Data";
 import { sliderArr } from "../../../Data/sliderArray";
 
 // sub components:
-import Carousel from "../../reuseable/carousel/Carousel";
-import SocialMediaIcons from "../../SocialMediaIcons/SocialMediaIcons";
-import ShopCard from "../../reuseable/ShopCards/ShopCard";
+import Carousel from "../../../components/reuseable/carousel/Carousel";
+import SocialMediaIcons from "../../../components/SocialMediaIcons/SocialMediaIcons";
+import ShopCard from "../../../components/reuseable/ShopCards/ShopCard";
 
 // styled components:
 import {

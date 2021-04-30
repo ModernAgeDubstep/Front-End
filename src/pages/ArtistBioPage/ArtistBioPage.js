@@ -4,8 +4,8 @@ import { fetchArtistBioData } from "../../state/actions";
 import { data } from "../../Data/Data";
 
 // Sub Components:
-import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
-import ReleaseCard from "./ReleaseCard/ReleaseCard";
+import SocialMediaIcons from "../../components/SocialMediaIcons/SocialMediaIcons";
+import ReleaseCard from "../../components/ReleaseCard/ReleaseCard";
 
 // Styled Components:
 import {
