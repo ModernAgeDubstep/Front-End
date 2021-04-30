@@ -28,8 +28,6 @@ export const ShopAllItems = () => {
     fetchAllProducts(dispatch);
   }, [dispatch]);
 
-  // console.log(products);
-
   return (
     <Container>
       <Carousel sliderArr={sliderArr} />
