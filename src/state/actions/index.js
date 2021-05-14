@@ -9,6 +9,7 @@ export const actionTypes = {
   SET_BIO_DATA: "SET_BIO_DATA",
   FETCH_PRODUCTS: "FETCH_PRODUCTS",
   FETCH_PRODUCT: "FETCH_PRODUCT",
+  FETCH_PRICE_PRODUCT: "FETCH_PRICE_PRODUCT"
 };
 
 export const fetchArtists = (dispatch) => {
@@ -97,12 +98,24 @@ export const fetchProduct = (dispatch, id) => {
   axios
     .get(`https://modernagedubstep.herokuapp.com/api/stripe/price/${id}`)
     .then((res) => {
-      console.log(res);
       dispatch({ type: actionTypes.FETCH_PRODUCT, payload: res });
     })
     .catch((err) => {
-      console.log(err);
       dispatch({ type: actionTypes.FETCH_ERROR, payload: err });
     });
   dispatch({ type: actionTypes.FETCH_END });
 };
+
+export const fetchProductAndPrice = (dispatch, id) => {
+  console.log(id)
+  dispatch({ type: actionTypes.FETCH_START })
+  axios
+  .get(`http://localhost:5000/api/stripe/pnp/${id}`)
+  .then(res => {
+    dispatch({ type: actionTypes.FETCH_PRICE_PRODUCT, payload: res.data })
+  })
+  .catch(err => {
+    dispatch({ type: actionTypes.FETCH_ERROR, payload: err });
+  })
+  dispatch({ type: actionTypes.FETCH_END });
+}

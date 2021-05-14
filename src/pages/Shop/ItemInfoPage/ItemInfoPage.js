@@ -1,12 +1,16 @@
-import React from 'react';
-// import { useRouteMatch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchProductAndPrice } from '../../../state/actions/index';
 
 const ItemInfoPage = () => {
+    const productInfo = useSelector(state => state.productInfo);
+    const dispatch = useDispatch();
+    const Params = useParams();
 
-    // use Redux Action creator to create the function to make the api
-    // request here. Then store the item it returns on state and fetch that data
-    // use that hook to mount the state data on this page.
-    // The Back-end endpoint might need to be created using Stripe API
+    useEffect(() => {
+        fetchProductAndPrice(dispatch, Params.productId)
+    }, [])
     
     return(
         <>
