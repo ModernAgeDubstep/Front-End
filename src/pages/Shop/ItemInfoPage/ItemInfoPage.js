@@ -10,7 +10,7 @@ const ItemInfoPage = () => {
 
     useEffect(() => {
         fetchProductAndPrice(dispatch, Params.productId)
-    }, [Params.productId])
+    }, [Params.productId, dispatch])
     // Create the style for this page:
     // complete page features.
     // switch API endpoint to live version.
