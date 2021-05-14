@@ -7,6 +7,7 @@ export const initialState = {
   artist: [],
   releases: [],
   products: [],
+  productInfo: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -47,6 +48,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         products: action.payload,
       };
+    case actionTypes.FETCH_PRICE_PRODUCT:
+      return {
+        ...state,
+        productInfo: action.payload
+      }
     default:
       return state;
   }
